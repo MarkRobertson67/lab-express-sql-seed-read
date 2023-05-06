@@ -6,7 +6,8 @@
   "scripts": {
     "db:init": "psql -U postgres -f db/schema.sql",
     "db:seed": "psql -U postgres -f db/seed.sql",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,6 @@
     "nodemon": "^2.0.22",
     "pg-promise": "^11.4.3",
     "supertest": "^6.2.0"
-  }
+  },
+  "keywords": []
 }

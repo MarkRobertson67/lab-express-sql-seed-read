@@ -10,9 +10,6 @@ const getAllSongs = async () => {
       }
 };
 
-// const allSongs = await db.any("SELECT id, name, artist, album, to_char(time, 'FMHH12:MI') as time, is_favorite FROM songs");
-
-
 
 // Show query
 const getASong = async (id) => {
@@ -60,7 +57,6 @@ const updateSong = async (id, song) => {
     };
   };
 
-//   ($1, $2, $3, to_char($4, 'FMHH12:MI'), $5)
 
 module.exports = {
     getAllSongs,

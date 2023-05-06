@@ -2,6 +2,7 @@ const express = require("express");
 const songs = express.Router();
 const { getAllSongs, getASong, createSong, deleteSong, updateSong } = require("../queries/songs");
 
+
 // INDEX route
 songs.get("/", async (req, res) => {
     const allSongs = await getAllSongs();
@@ -36,10 +37,6 @@ songs.post('/', async (req, res) => {
   } else if (!newSong.is_favorite === "boolean") {
     return res.status(400).json({ error: "is_favorite must be a boolean" });
   }
-
-//   !newSong.name ? res.status(400).json({ error: "Name is missing" }) :
-// !newSong.artist ? res.status(400).json({ error: "Artist is missing" }) :
-// typeof newSong.is_favorite !== "boolean" ? res.status(400).json({ error: "is_favorite must be a boolean" }) :
 
   try {
     const addedSong = await createSong(newSong)
